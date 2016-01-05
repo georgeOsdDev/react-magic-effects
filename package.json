@@ -1,0 +1,80 @@
+{
+  "name": "react-magic-effects",
+  "version": "0.1.0",
+  "description": "Magical effects for react components",
+  "main": "./lib/index.js",
+  "scripts": {
+    "browser": "browser-sync start --files example/* --server example",
+    "watch:example": "watchify example/app.js -dv -o example/bundle.js",
+    "start:example": "npm run build && npm run watch:example & npm run browser",
+    "test:local": "karma start",
+    "test": "./node_modules/.bin/karma start --browsers Firefox --single-run",
+    "clean": "rimraf lib",
+    "build": "npm run clean && babel src --out-dir lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/georgeosddev/react-magic-effects"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "magic",
+    "animation"
+  ],
+  "author": "Takeharu.Oshida",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/georgeosddev/react-magic-effects/issues"
+  },
+  "homepage": "https://github.com/georgeosddev/react-magic-effects",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-core": "^6.3.21",
+    "babel-eslint": "^4.1.3",
+    "babel-polyfill": "^6.0.16",
+    "babel-preset-es2015": "^6.0.15",
+    "babel-preset-react": "^6.0.15",
+    "babelify": "^7.2.0",
+    "browser-sync": "^2.9.11",
+    "browserify": "^12.0.1",
+    "chai": "^3.4.0",
+    "eslint": "^1.8.0",
+    "eslint-plugin-react": "^3.6.3",
+    "karma": "^0.13.15",
+    "karma-browserify": "^4.4.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.2.1",
+    "karma-cli": "0.1.1",
+    "karma-firefox-launcher": "^0.1.6",
+    "karma-mocha": "^0.2.0",
+    "karma-safari-launcher": "^0.1.1",
+    "karma-spec-reporter": "0.0.22",
+    "mocha": "^2.3.3",
+    "react-addons-test-utils": "^0.14.2",
+    "rimraf": "^2.4.4",
+    "sinon": "^1.17.2",
+    "watchify": "^3.6.0"
+  },
+  "dependencies": {
+    "inline-style-prefixer": "^0.5.4",
+    "performance-now": "^0.2.0",
+    "raf": "^3.1.0",
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "compact": false,
+          "presets": [
+            "es2015",
+            "react"
+          ]
+        }
+      ]
+    ]
+  }
+}
