@@ -1,7 +1,7 @@
 # react-magic-effects [![Build Status](https://travis-ci.org/georgeOsdDev/react-magic-effects.svg?branch=develop)](https://travis-ci.org/georgeOsdDev/react-magic-effects) [![npm version](https://badge.fury.io/js/react-magic-effects.svg)](http://badge.fury.io/js/react-magic-effects)
 
 Magical effects for react components
-Inspired by [Magic](https://github.com/miniMAC/magic).
+Inspired by [magic](https://github.com/miniMAC/magic).
 
 ## Demo
 
@@ -67,13 +67,24 @@ EffectContainer.propTypes = {
    }
    ```
 
+ * `reset`
+
+   Reset animation.
+
+   ```
+   onAnimationEnd(){
+     this.refs.myAnimationContainer.reset();
+   }
+   ```
+
+
 ## Usage example
 
 ```javascript
 
 import EffectContainer, {Effects} from 'react-magic-effects';
 
-<EffectContainer effect={Effects.magic}>
+<EffectContainer ref='myAnimationContainer' effect={Effects.magic}>
   <YourComponent>
 </EffectContainer>
 ```

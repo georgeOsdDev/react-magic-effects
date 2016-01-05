@@ -1,10 +1,18 @@
 'use strict';
 
+import merge from 'merge';
 import now from 'performance-now';
 import raf from 'raf';
 import React from 'react';
 import ReactDom from 'react-dom';
 import Effects from '../Effects';
+
+const BASE_STYLE = {
+  WebkitAnimationDuration: '1s',
+  animationDuration: '1s',
+  WebkitAnimationFillMode: 'both',
+  animationFillMode: 'both'
+};
 
 class EffectContainer extends React.Component {
   constructor(props) {
@@ -37,25 +45,18 @@ class EffectContainer extends React.Component {
       onAnimationEnd
     } = this.props;
 
-    let attachStyle = (node, style, cb) => {
-      for (let key in style) {
-        node.style[key] = style[key];
-      }
-      cb();
-    }
-
     let frameLoop = () => {
       let lastTime = now();
       let frame = Math.floor((lastTime - this.startTime) / (1000.0 / 60.0) % (60 * duration));
       let progress = Math.floor((frame / ((60 * duration) - 1)) * 100);
       let style = effect(progress);
       if (progress >= 100 && !loop){
-        attachStyle(target, style, () => {
+        this._attachStyle(target, style, () => {
           raf.cancel(this.handle);
           onAnimationEnd();
         });
       } else {
-        attachStyle(target, style, () => {
+        this._attachStyle(target, style, () => {
           this.handle = raf(frameLoop);
         });
       }
@@ -69,14 +70,28 @@ class EffectContainer extends React.Component {
     }
   }
 
+  reset() {
+    let target = ReactDom.findDOMNode(this.refs.target);
+    let style = this.props.effect(0);
+    this._attachStyle(target, style, () => {});
+  }
+
+  _attachStyle(node, style, cb) {
+    for (let key in style) {
+      node.style[key] = style[key];
+    }
+    cb();
+  }
+
+  // @TODO
   // pause() {
   // }
-  //
-  // resume(lastProgress){
+  // resume(){
   // }
 
   render() {
-    return React.cloneElement(this.props.children, {ref: 'target'});;
+    let newStyle = merge(this.props.children.props.style, BASE_STYLE);
+    return React.cloneElement(this.props.children, {ref: 'target', style: newStyle});;
   }
 }
 
