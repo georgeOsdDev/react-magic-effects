@@ -5,11 +5,11 @@ import utils from './utils';
 
 export default (progress) => {
   'use strict';
-  let transform = `rotate(${utils.calc(0, -110, progress)}deg)`;
-  let animationTimingFunction = progress === 100 ? 'ease-out' : 'ease-in-out';
+  let transform = `rotate(${utils.calc(110, 0, progress)}deg)`;
+  let animationTimingFunction = progress === 100 ?  'ease-in-out' : 'ease-out';
 
   return utils.prefix({
-    'transform-origin': 'bottom left',
+    'transform-origin': 'bottom right',
     'transform': transform,
     'animation-timing-function': animationTimingFunction
   });

@@ -9,7 +9,7 @@ export default (progress) => {
   let animationTimingFunction = progress === 100 ? 'ease-out' : 'ease-in-out';
 
   return utils.prefix({
-    'transform-origin': 'bottom left',
+    'transform-origin': 'top right',
     'transform': transform,
     'animation-timing-function': animationTimingFunction
   });
