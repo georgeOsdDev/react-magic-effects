@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>React-magic-effects by georgeOsdDev</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>React-magic-effects</h1>
+        <p>Magical effects for react components</p>
+
+        <p class="view"><a href="https://github.com/georgeOsdDev/react-magic-effects">View the Project on GitHub <small>georgeOsdDev/react-magic-effects</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/georgeOsdDev/react-magic-effects/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/georgeOsdDev/react-magic-effects/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/georgeOsdDev/react-magic-effects">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="react-magic-effects--" class="anchor" href="#react-magic-effects--" aria-hidden="true"><span class="octicon octicon-link"></span></a>react-magic-effects <a href="https://travis-ci.org/georgeOsdDev/react-magic-effects"><img src="https://travis-ci.org/georgeOsdDev/react-magic-effects.svg?branch=develop" alt="Build Status"></a> <a href="http://badge.fury.io/js/react-magic-effects"><img src="https://badge.fury.io/js/react-magic-effects.svg" alt="npm version"></a>
+</h1>
+
+<p>Magical effects for react components
+Inspired by <a href="https://github.com/miniMAC/magic">magic</a>.</p>
+
+<p><a href="https://gyazo.com/ee58db0f8e77abbe08e68c63cfbc9ad0"><img src="https://i.gyazo.com/ee58db0f8e77abbe08e68c63cfbc9ad0.gif" alt="https://gyazo.com/ee58db0f8e77abbe08e68c63cfbc9ad0"></a></p>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://georgeosddev.github.io/react-magic-effects/example/">View Demo</a></p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm install --save react-magic-effects</pre></div>
+
+<h2>
+<a id="api" class="anchor" href="#api" aria-hidden="true"><span class="octicon octicon-link"></span></a>API</h2>
+
+<h3>
+<a id="effectcontainer" class="anchor" href="#effectcontainer" aria-hidden="true"><span class="octicon octicon-link"></span></a><code>EffectContainer</code>
+</h3>
+
+<h4>
+<a id="props" class="anchor" href="#props" aria-hidden="true"><span class="octicon octicon-link"></span></a>Props</h4>
+
+<div class="highlight highlight-source-js"><pre><span class="pl-smi">EffectContainer</span>.<span class="pl-smi">propTypes</span> <span class="pl-k">=</span> {
+  effect<span class="pl-k">:</span> <span class="pl-smi">React</span>.<span class="pl-smi">PropTypes</span>.<span class="pl-smi">func</span>, <span class="pl-c">// some default effects are available from `Effects`</span>
+  duration<span class="pl-k">:</span> <span class="pl-smi">React</span>.<span class="pl-smi">PropTypes</span>.<span class="pl-smi">number</span>, <span class="pl-c">//second</span>
+  loop<span class="pl-k">:</span> <span class="pl-smi">React</span>.<span class="pl-smi">PropTypes</span>.<span class="pl-smi">bool</span>, <span class="pl-c">// animation will be looped after 60 frame * duration</span>
+  autoPlay<span class="pl-k">:</span> <span class="pl-smi">React</span>.<span class="pl-smi">PropTypes</span>.<span class="pl-smi">bool</span> <span class="pl-c">// animation will be started after `componentDidMount` and `componentDidUpdate`,</span>
+  onAnimationEnd<span class="pl-k">:</span> <span class="pl-smi">React</span>.<span class="pl-smi">PropTypes</span>.<span class="pl-smi">func</span> <span class="pl-c">// called when animation end</span>
+};</pre></div>
+
+<h4>
+<a id="available-effects" class="anchor" href="#available-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Available Effects</h4>
+
+<p>These effects is available from <code>Effects</code>.</p>
+
+<h5>
+<a id="magic-effects" class="anchor" href="#magic-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Magic effects</h5>
+
+<ul>
+<li>magic</li>
+<li>twisterInDown</li>
+<li>twisterInUp</li>
+<li>swap</li>
+</ul>
+
+<h5>
+<a id="bling" class="anchor" href="#bling" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bling</h5>
+
+<ul>
+<li>puffIn</li>
+<li>puffOut</li>
+<li>vanishIn</li>
+<li>vanishOut</li>
+</ul>
+
+<h5>
+<a id="static-effects" class="anchor" href="#static-effects" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static Effects</h5>
+
+<ul>
+<li>openDownLeft</li>
+<li>openDownLeftRetourn</li>
+<li>openDownRight</li>
+<li>openDownRightRetourn</li>
+<li>openUpLeft</li>
+<li>openUpLeftRetourn</li>
+<li>openUpRight</li>
+<li>openUpRightRetourn</li>
+</ul>
+
+<h5>
+<a id="static-effects-out" class="anchor" href="#static-effects-out" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static Effects Out</h5>
+
+<ul>
+<li>openDownLeftOut</li>
+<li>openDownRightOut</li>
+<li>openUpLeftOut</li>
+<li>openUpRightOut</li>
+</ul>
+
+<h5>
+<a id="perspective" class="anchor" href="#perspective" aria-hidden="true"><span class="octicon octicon-link"></span></a>Perspective</h5>
+
+<ul>
+<li>perspectiveDown</li>
+<li>perspectiveDownRetourn</li>
+<li>perspectiveLeft</li>
+<li>perspectiveLeftRetourn</li>
+<li>perspectiveRight</li>
+<li>perspectiveRightRetourn</li>
+<li>perspectiveUp</li>
+<li>perspectiveUpRetourn</li>
+</ul>
+
+<h5>
+<a id="rotate" class="anchor" href="#rotate" aria-hidden="true"><span class="octicon octicon-link"></span></a>Rotate</h5>
+
+<ul>
+<li>rotateDown</li>
+<li>rotateLeft</li>
+<li>rotateRight</li>
+<li>rotateUp</li>
+</ul>
+
+<h5>
+<a id="slide" class="anchor" href="#slide" aria-hidden="true"><span class="octicon octicon-link"></span></a>Slide</h5>
+
+<ul>
+<li>slideDown</li>
+<li>slideDownRetourn</li>
+<li>slideLeft</li>
+<li>slideLeftRetourn</li>
+<li>slideRight</li>
+<li>slideRightRetourn</li>
+<li>slideUp</li>
+<li>slideUpRetourn</li>
+</ul>
+
+<h5>
+<a id="math" class="anchor" href="#math" aria-hidden="true"><span class="octicon octicon-link"></span></a>Math</h5>
+
+<ul>
+<li>swashIn</li>
+<li>swashOut</li>
+<li>foolishIn</li>
+<li>foolishOut</li>
+<li>holeOut</li>
+</ul>
+
+<h5>
+<a id="tin" class="anchor" href="#tin" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tin</h5>
+
+<ul>
+<li>tinDownIn</li>
+<li>tinDownOut</li>
+<li>tinLeftIn</li>
+<li>tinLeftOut</li>
+<li>tinRightIn</li>
+<li>tinRightOut</li>
+<li>tinUpIn</li>
+<li>tinUpOut</li>
+</ul>
+
+<h5>
+<a id="bomb" class="anchor" href="#bomb" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bomb</h5>
+
+<ul>
+<li>bombLeftOut</li>
+<li>bombRightOut</li>
+</ul>
+
+<h5>
+<a id="boing" class="anchor" href="#boing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Boing</h5>
+
+<ul>
+<li>boingInUp</li>
+<li>boingOutDown</li>
+</ul>
+
+<h5>
+<a id="on-the-space" class="anchor" href="#on-the-space" aria-hidden="true"><span class="octicon octicon-link"></span></a>On the Space</h5>
+
+<ul>
+<li>spaceInDown</li>
+<li>spaceInLeft</li>
+<li>spaceInRight</li>
+<li>spaceInUp</li>
+<li>spaceOutDown</li>
+<li>spaceOutLeft</li>
+<li>spaceOutRight</li>
+<li>spaceOutUp</li>
+</ul>
+
+<h5>
+<a id="scale" class="anchor" href="#scale" aria-hidden="true"><span class="octicon octicon-link"></span></a>Scale</h5>
+
+<ul>
+<li>scaleIn</li>
+<li>scaleOut</li>
+</ul>
+
+<h4>
+<a id="custom-effect" class="anchor" href="#custom-effect" aria-hidden="true"><span class="octicon octicon-link"></span></a>Custom Effect</h4>
+
+<p>You can apply your custom effect by using your own function.</p>
+
+<ul>
+<li>
+<p><code>effect(progress) =&gt; {}</code>:</p>
+
+<p><code>progress</code> will be passed as number(0 to 100).</p>
+
+<p><strong>return object should be in css format (Not React JSX style).</strong></p>
+
+<pre><code>let myEffect = (progress) =&gt; {
+  let transform = `scale(${Effects.utils.one2Zero(progress)}, ${Effects.utils.one2Zero(progress)})`;
+
+  return {
+    '-webkit-transform': transform,
+    'transform': transform
+  };
+}
+</code></pre>
+</li>
+</ul>
+
+<h4>
+<a id="component-api" class="anchor" href="#component-api" aria-hidden="true"><span class="octicon octicon-link"></span></a>Component API</h4>
+
+<ul>
+<li>
+<p><code>play</code></p>
+
+<p>Start animation.</p>
+
+<pre><code>handlePlayButtonClick(){
+  this.refs.myAnimationContainer.play();
+}
+</code></pre>
+</li>
+<li>
+<p><code>stop</code></p>
+
+<p>Stop animation.</p>
+
+<pre><code>handlePauseButtonClick(){
+ this.refs.myAnimationContainer.stop();
+}
+</code></pre>
+</li>
+<li>
+<p><code>reset</code></p>
+
+<p>Reset animation.</p>
+
+<pre><code>onAnimationEnd(){
+ this.refs.myAnimationContainer.reset();
+}
+</code></pre>
+</li>
+</ul>
+
+<h2>
+<a id="usage-example" class="anchor" href="#usage-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage example</h2>
+
+<div class="highlight highlight-source-js"><pre>
+<span class="pl-k">import</span> <span class="pl-smi">EffectContainer</span>, {<span class="pl-smi">Effects</span>} <span class="pl-k">from</span> <span class="pl-s"><span class="pl-pds">'</span>react-magic-effects<span class="pl-pds">'</span></span>;
+
+<span class="pl-k">&lt;</span>EffectContainer ref<span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">'</span>myAnimationContainer<span class="pl-pds">'</span></span> effect<span class="pl-k">=</span>{<span class="pl-smi">Effects</span>.<span class="pl-smi">magic</span>}<span class="pl-k">&gt;</span>
+  <span class="pl-k">&lt;</span>YourComponent<span class="pl-k">&gt;</span>
+<span class="pl-k">&lt;</span><span class="pl-k">/</span>EffectContainer<span class="pl-k">&gt;</span></pre></div>
+
+<p>See <a href="https://github.com/georgeOsdDev/react-magic-effects/tree/master/example">example</a></p>
+
+<div class="highlight highlight-source-shell"><pre>npm install
+npm run start:example</pre></div>
+
+<h2>
+<a id="tests" class="anchor" href="#tests" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tests</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm <span class="pl-c1">test</span></pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/georgeOsdDev">georgeOsdDev</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
