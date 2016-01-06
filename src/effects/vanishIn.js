@@ -10,12 +10,10 @@ export default (progress) => {
   let transform = `scale(${utils.calc(2, 1, progress)}, ${utils.calc(2, 1, progress)})`;
   let filter = `blur(${utils.calc(90, 0, progress)}px)`
 
-  let st =  utils.prefix({
+  return utils.prefix({
     'opacity': opacity,
     'transform-origin': transformOrigin,
     'transform': transform,
     'filter': filter
   });
-  console.log(st);
-  return st;
 }
