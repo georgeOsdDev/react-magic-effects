@@ -3,6 +3,8 @@
 Magical effects for react components
 Inspired by [magic](https://github.com/miniMAC/magic).
 
+[![https://gyazo.com/ee58db0f8e77abbe08e68c63cfbc9ad0](https://i.gyazo.com/ee58db0f8e77abbe08e68c63cfbc9ad0.gif)](https://gyazo.com/ee58db0f8e77abbe08e68c63cfbc9ad0)
+
 ## Demo
 
 [View Demo](http://georgeosddev.github.io/react-magic-effects/example/)
@@ -29,14 +31,128 @@ EffectContainer.propTypes = {
 };
 ```
 
+#### Available Effects
+
+These effects is available from `Effects`.
+
+##### Magic effects
+
+  * magic
+  * twisterInDown
+  * twisterInUp
+  * swap
+
+##### Bling
+
+  * puffIn
+  * puffOut
+  * vanishIn
+  * vanishOut
+
+##### Static Effects
+
+  * openDownLeft
+  * openDownLeftRetourn
+  * openDownRight
+  * openDownRightRetourn
+  * openUpLeft
+  * openUpLeftRetourn
+  * openUpRight
+  * openUpRightRetourn
+
+##### Static Effects Out
+  * openDownLeftOut
+  * openDownRightOut
+  * openUpLeftOut
+  * openUpRightOut
+
+##### Perspective
+
+  * perspectiveDown
+  * perspectiveDownRetourn
+  * perspectiveLeft
+  * perspectiveLeftRetourn
+  * perspectiveRight
+  * perspectiveRightRetourn
+  * perspectiveUp
+  * perspectiveUpRetourn
+
+##### Rotate
+
+  * rotateDown
+  * rotateLeft
+  * rotateRight
+  * rotateUp
+
+##### Slide
+
+  * slideDown
+  * slideDownRetourn
+  * slideLeft
+  * slideLeftRetourn
+  * slideRight
+  * slideRightRetourn
+  * slideUp
+  * slideUpRetourn
+
+##### Math
+
+  * swashIn
+  * swashOut
+  * foolishIn
+  * foolishOut
+  * holeOut
+
+##### Tin
+
+  * tinDownIn
+  * tinDownOut
+  * tinLeftIn
+  * tinLeftOut
+  * tinRightIn
+  * tinRightOut
+  * tinUpIn
+  * tinUpOut
+
+##### Bomb
+
+  * bombLeftOut
+  * bombRightOut
+
+##### Boing
+
+  * boingInUp
+  * boingOutDown
+
+##### On the Space
+
+  * spaceInDown
+  * spaceInLeft
+  * spaceInRight
+  * spaceInUp
+  * spaceOutDown
+  * spaceOutLeft
+  * spaceOutRight
+  * spaceOutUp
+
+##### Scale
+
+  * scaleIn
+  * scaleOut
+
+#### Custom Effect
+
+You can apply your custom effect by using your own function.
+
 * `effect(progress) => {}`:
 
   `progress` will be passed as number(0 to 100).
-  **Return object should be in css format (Not React JSX style).**
+
+  **return object should be in css format (Not React JSX style).**
 
   ```
   let myEffect = (progress) => {
-    let transform = `scale(${utils.one2Zero(progress)}, ${utils.one2Zero(progress)})`;
+    let transform = `scale(${Effects.utils.one2Zero(progress)}, ${Effects.utils.one2Zero(progress)})`;
 
     return {
       '-webkit-transform': transform,
@@ -45,7 +161,7 @@ EffectContainer.propTypes = {
   }
   ```
 
-#### API
+#### Component API
 
  * `play`
 
@@ -101,11 +217,3 @@ npm run start:example
 ```bash
 npm test
 ```
-
-
-## TODOs
-
- * test
- * pause/resume
- * add effects
- * Update example

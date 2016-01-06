@@ -10,7 +10,8 @@
     "test:local": "karma start",
     "test": "./node_modules/.bin/karma start --browsers Firefox --single-run",
     "clean": "rimraf lib",
-    "build": "npm run clean && babel src --out-dir lib"
+    "build": "npm run clean && babel src --out-dir lib",
+    "prePublish": "npm run build"
   },
   "repository": {
     "type": "git",
