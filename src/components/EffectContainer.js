@@ -59,6 +59,7 @@ class EffectContainer extends React.Component {
       if (progress >= 100 && !loop){
         this._attachStyle(target, style, () => {
           raf.cancel(this.handle);
+          this.handle = null;
           onAnimationEnd();
         });
       } else {
@@ -73,6 +74,7 @@ class EffectContainer extends React.Component {
   stop() {
     if (this.handle){
       raf.cancel(this.handle);
+      this.handle = null;
     }
   }
 
