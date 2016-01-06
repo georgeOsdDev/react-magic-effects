@@ -5,7 +5,7 @@ import now from 'performance-now';
 import raf from 'raf';
 import React from 'react';
 import ReactDom from 'react-dom';
-import Effects from '../Effects';
+import Effects from '../effects';
 
 const BASE_STYLE = {
   WebkitAnimationDuration: '1s',
