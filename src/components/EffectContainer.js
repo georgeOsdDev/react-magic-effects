@@ -35,6 +35,12 @@ class EffectContainer extends React.Component {
     }
   }
 
+  componentWillUnmount(){
+    if (this.handle){
+      raf.cancel(this.handle);
+    }
+  }
+
   play(){
     let target = ReactDom.findDOMNode(this.refs.target);
     this.startTime = now()
