@@ -205,7 +205,7 @@ import EffectContainer, {Effects} from 'react-magic-effects';
 </EffectContainer>
 ```
 
-See  [example](https://github.com/georgeOsdDev/react-magic-effects/tree/develop/example)
+See [example](https://github.com/georgeOsdDev/react-magic-effects/tree/master/example)
 
 ```bash
 npm install
